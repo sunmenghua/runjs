@@ -1,11 +1,28 @@
+function getScripts (url, callback) {
+    chrome.storage.local.get('scripts', function (data) {
+        var scripts = data.scripts || [];
+        if (url) {
+            scripts = scripts.filter(function (script) {
+               return url.match(script.pattern);
+            });
+        }
+        callback && callback(scripts);
+    });
+}
+
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
     if (request.action === 'test') {
-        var code = getScript();
-        executeScript(sender.tab.id, code, function () {
-            console.log('run done');
+        getScripts(sender.tab.url, function (scripts) {
+            scripts.forEach(function (script) {
+                executeScript(sender.tab.id, script.code, function () {
+                    console.log('tab[' + sender.tab.id + '] run script[' + script.id + ']');
+                    console.log(script.pattern);
+                    console.log(script.code);
+                });
+            });
+            sendResponse('RunJS ran!');
         });
     }
-    sendResponse({result: 'ok'});
 });
 
 function getScript(url) {

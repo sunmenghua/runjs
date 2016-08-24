@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <title>RunJS Options</title>
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">RunJS Options</div>
+    </header>
+    <div class="container options"> 
+        <div class="item-list">
+            <div class="form-horizontal script">
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">Pattern</label>
+                    <div class="col-sm-5">
+                        <input type="text" name="pattern" class="form-control" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label sr-only">Script</label>
+                    <div class="col-sm-8">
+                        <textarea name="code" class="form-control" rows="15"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal">
+            <div class="form-group">
+                <div class="col-sm-9">
+                    <button class="btn btn-primary pull-right add">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./common.js"></script>
+    <script src="./add.js"></script>
+</body>
+</html>

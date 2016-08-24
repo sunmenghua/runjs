@@ -10,46 +10,20 @@
         <div class="container">RunJS Options</div>
     </header>
     <div class="container options"> 
-        <div class="item-list">
-            <div class="form-horizontal item">
-                <div class="form-group">
-                    <label class="col-sm-1 control-label">Patterns</label>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control" value="https://www.baidu.com/*">
-                    </div>
-                    <span class="glyphicon glyphicon-remove"></span>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-1 control-label sr-only">Script</label>
-                    <div class="col-sm-8">
-                        <textarea class="form-control" rows="3">$(document).off('.alert.data-api');</textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="form-horizontal item">
-                <div class="form-group">
-                    <label class="col-sm-1 control-label">Patterns</label>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control" value="https://www.baidu.com/*">
-                    </div>
-                    <span class="glyphicon glyphicon-remove"></span>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-1 control-label sr-only">Script</label>
-                    <div class="col-sm-8">
-                        <textarea class="form-control" rows="3">$(document).off('.alert.data-api');</textarea>
-                    </div>
-                </div>
-            </div>
+        <div class="empty" style="display: none;">
+            <p>脚本列表为空，去 <a href="add.html">添加脚本</a></p>
         </div>
-        <div class="form-horizontal item">
+        <div class="scripts" style="display: none;"></div>
+        <div class="form-horizontal save-row" style="display: none;">
             <div class="form-group">
                 <div class="col-sm-9">
-                    <button type="submit" class="btn btn-primary pull-right">Save</button>
+                    <button class="btn btn-primary pull-right save">Save</button>
                 </div>
             </div>
         </div>
     </div>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./common.js"></script>
+    <script src="./options.js"></script>
 </body>
 </html>
