@@ -1,10 +1,15 @@
 var common = {
-    getScripts: function (url, callback) {
+    getScripts: function (params, callback) {
         chrome.storage.local.get('scripts', function (data) {
             var scripts = data.scripts || [];
-            if (url) {
+            if (params.id) {
                 scripts = scripts.filter(function (script) {
-                   return url.match(script.pattern);
+                    return params.id == script.id;
+                });
+            }
+            if (params.url) {
+                scripts = scripts.filter(function (script) {
+                   return params.url.match(script.pattern);
                 });
             }
             callback && callback(scripts);
@@ -20,6 +25,18 @@ var common = {
             var scripts = data.scripts || [];
             scripts.push(script);
             chrome.storage.local.set({scripts: scripts}, function () {
+                callback && callback();
+            });
+        });
+    },
+    editScript: function (script, callback) {
+        chrome.storage.local.get('scripts', function (data) {
+            var scripts = data.scripts || [];
+            scripts = scripts.map(function (item) {
+                return script.id == item.id ? script : item;
+            });
+            console.log(scripts);
+            common.saveScripts(scripts, function () {
                 callback && callback();
             });
         });

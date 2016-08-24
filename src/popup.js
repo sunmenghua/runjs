@@ -5,7 +5,7 @@ var popup = {
             html += '<div class="checkbox script">'
                  +      '<input type="hidden" name="id" value="' + script.id + '">'
                  +      '<label><input type="checkbox">' + script.pattern + '</label>'
-                 +      '<a href="options.html" target="_bank"><span class="glyphicon glyphicon-cog pull-right"></span></a>'
+                 +      '<a href="edit.html?id=' + script.id + '" target="_bank"><span class="glyphicon glyphicon-cog pull-right"></span></a>'
                  +      '<pre>' + script.code + '</pre>'
                  +  '</div>';
         });
@@ -21,10 +21,9 @@ var popup = {
 
 $(document).ready(function () {
     chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-        var url = tabs[0].url;
-        common.getScripts(url, function (scripts) {
+        common.getScripts({url: tabs[0].url}, function (scripts) {
             popup.renderScripts(scripts);
         });
-        $(".add-script").attr('href', 'add.html?url=' + escape(url));
+        $(".add-script").attr('href', 'edit.html?url=' + escape(tabs[0].url));
     });
 });

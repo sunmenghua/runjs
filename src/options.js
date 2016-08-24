@@ -59,6 +59,10 @@ $(document).ready(function () {
         var id = $script.find("input[name=id]").val();
         common.removeScript(id, function () {
             $script.remove();
+            if ($(".script").length === 0) {
+                $(".save-row").hide();
+                $(".empty").show();
+            }
         });
     });
 });
