@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <title>RunJS Options</title>
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">RunJS Options</div>
+    </header>
+    <div class="container options"> 
+        <div class="item-list">
+            <div class="form-horizontal item">
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">Patterns</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" value="https://www.baidu.com/*">
+                    </div>
+                    <span class="glyphicon glyphicon-remove"></span>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label sr-only">Script</label>
+                    <div class="col-sm-8">
+                        <textarea class="form-control" rows="3">$(document).off('.alert.data-api');</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal item">
+                <div class="form-group">
+                    <label class="col-sm-1 control-label">Patterns</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" value="https://www.baidu.com/*">
+                    </div>
+                    <span class="glyphicon glyphicon-remove"></span>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label sr-only">Script</label>
+                    <div class="col-sm-8">
+                        <textarea class="form-control" rows="3">$(document).off('.alert.data-api');</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal item">
+            <div class="form-group">
+                <div class="col-sm-9">
+                    <button type="submit" class="btn btn-primary pull-right">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+</body>
+</html>

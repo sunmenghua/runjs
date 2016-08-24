@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+
+    "name": "runjs",
+    "description": "",
+    "version": "1.0",
+
+    "permissions": [
+        "tabs",
+        "storage",
+        "unlimitedStorage",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "background": {
+        "scripts": ["src/background.js"]
+    },
+    "content_scripts": [{
+        "matches": ["*://*/*"],
+        "js": ["node_modules/jquery/dist/jquery.min.js", "src/content.js"]
+    }],
+    "browser_action": {
+        "name": "Click to change the icon's color",
+        "default_popup": "src/popup.html"
+    },
+    "options_page": "src/options.html"
+}

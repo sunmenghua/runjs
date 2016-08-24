@@ -1,0 +1,48 @@
+.container.popup {
+    width: 500px;
+    min-height: 100px;
+    margin-top: 10px;
+}
+
+hr {
+    margin: 10px 0;
+}
+
+footer {
+    margin: 8px 10px;
+}
+
+.checkbox label {
+    margin-bottom: 5px;
+}
+
+.item {
+    margin: 15px 0 20px 0;
+}
+
+.item-glyphicon {
+    margin-right: 10px;
+}
+
+.empty {
+    text-align: center;
+    line-height: 90px;
+}
+
+.container.options {
+}
+
+header {
+    margin: 0;
+    line-height: 50px;
+    border-bottom: 1px solid #eee;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.glyphicon-remove {
+    color: #c32828;
+    margin-top: 8px;
+}
