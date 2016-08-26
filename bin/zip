@@ -1,0 +1,7 @@
+zip -r release/runjs.zip \
+manifest.json \
+src \
+icons \
+node_modules/jquery/dist/jquery.min.js \
+node_modules/bootstrap/dist/css/bootstrap.min.css \
+node_modules/bootstrap/dist/fonts
