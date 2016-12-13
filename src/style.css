@@ -1,7 +1,13 @@
-.container.popup {
-    width: 500px;
+.popup-view {
+    width: 400px;
     min-height: 100px;
-    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.popup-view .script {
+    border: 0;
+    padding: 0;
+    margin: 5px 0 15px 0;
 }
 
 hr {
@@ -9,15 +15,11 @@ hr {
 }
 
 footer {
-    margin: 8px 10px;
+    margin: 8px 0;
 }
 
 .checkbox label {
     margin-bottom: 5px;
-}
-
-.script {
-    margin: 15px 0 20px 0;
 }
 
 .empty {
@@ -25,7 +27,17 @@ footer {
     line-height: 90px;
 }
 
-.container.options {
+.options-view {
+    margin-top: 30px;
+}
+
+.script .btn-link {
+    padding: 3px 6px;
+    visibility: hidden;
+}
+
+.script:hover .btn-link {
+    visibility: visible;
 }
 
 header {
@@ -41,4 +53,16 @@ textarea {
 .glyphicon-remove {
     color: #c32828;
     margin-top: 8px;
+}
+
+.pre-scrollable {
+    max-height: 85px;
+}
+
+.edit-view {
+    margin-top: 30px;    
+}
+
+.edit-view .script {
+    border: 0;
 }

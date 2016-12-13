@@ -6,7 +6,7 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container popup"> 
+    <div class="container popup-view"> 
         <div class="empty" style="display: none;">
             <p>未匹配到脚本，去 <a class="add-script" href="edit.html" target="_bank">添加脚本</a></p>
         </div>
@@ -17,13 +17,13 @@
                 <pre>$(document).off('.alert.data-api');</pre>
             </div>
         </div>
+        <hr>
+        <footer class="clearfix">
+            <a href="options.html" target="_bank">All scripts</a>
+            <a class="btn btn-default btn-xs pull-right add-script" href="edit.html" target="_bank">Add Script</a>
+        </footer>
     </div>
-    <hr>
-    <footer class="clearfix">
-        <a href="options.html" target="_bank">Options</a>
-        <button class="btn btn-primary btn-xs pull-right" style="margin-left: 10px; display: none;">Run Again</button>
-        <a class="btn btn-default btn-xs pull-right add-script" href="edit.html" target="_bank">Add Script</a>
-    </footer>
+ 
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./common.js"></script>
     <script src="./popup.js"></script>

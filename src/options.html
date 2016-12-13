@@ -9,18 +9,18 @@
     <header>
         <div class="container">RunJS Options</div>
     </header>
-    <div class="container options"> 
+    <div class="container options-view"> 
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10">
+                <ol class="breadcrumb">
+                  <li class="active">All Scripts</li>
+                </ol>
+            </div>
+        </div>
         <div class="empty" style="display: none;">
             <p>脚本列表为空，去 <a href="edit.html">添加脚本</a></p>
         </div>
         <div class="scripts" style="display: none;"></div>
-        <div class="form-horizontal save-row" style="display: none;">
-            <div class="form-group">
-                <div class="col-xs-11 col-sm-12 col-md-11">
-                    <button class="btn btn-primary pull-right save">Save</button>
-                </div>
-            </div>
-        </div>
     </div>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./common.js"></script>

@@ -1,13 +1,11 @@
-var edit = {
-    getScript: function () {
-        var $script = $(".script");
-        return {
-            id: $script.find("input[name=id]").val(),
-            pattern: $script.find("input[name=pattern]").val(),
-            code: $script.find("textarea[name=code]").val(),
-        }
-    },
-};
+function getScript() {
+    var $script = $(".edit-view");
+    return {
+        id: $script.find("input[name=id]").val(),
+        pattern: $script.find("input[name=pattern]").val(),
+        code: $script.find("textarea[name=code]").val(),
+    }
+}
 
 $(document).ready(function () {
     var params = getUrlParams();
@@ -24,7 +22,13 @@ $(document).ready(function () {
     }
 
     $(".edit").click(function () {
-        var script = edit.getScript();
+        var script = getScript();
+
+        if (script.pattern.trim().length == 0) {
+            alert('请输入匹配模式');
+            return;
+        }
+
         if (script.id) {
             common.editScript(script, function () {
                 location.href = "options.html";

@@ -1,6 +1,6 @@
 var common = {
     getScripts: function (params, callback) {
-        chrome.storage.local.get('scripts', function (data) {
+        chrome.storage.local.get("scripts", function (data) {
             var scripts = data.scripts || [];
             if (params.id) {
                 scripts = scripts.filter(function (script) {
@@ -21,7 +21,7 @@ var common = {
         });
     },
     addScript: function (script, callback) {
-        chrome.storage.local.get('scripts', function (data) {
+        chrome.storage.local.get("scripts", function (data) {
             var scripts = data.scripts || [];
             scripts.push(script);
             chrome.storage.local.set({scripts: scripts}, function () {
@@ -30,7 +30,7 @@ var common = {
         });
     },
     editScript: function (script, callback) {
-        chrome.storage.local.get('scripts', function (data) {
+        chrome.storage.local.get("scripts", function (data) {
             var scripts = data.scripts || [];
             scripts = scripts.map(function (item) {
                 return script.id == item.id ? script : item;
@@ -42,7 +42,7 @@ var common = {
         });
     },
     removeScript: function (id, callback) {
-        chrome.storage.local.get('scripts', function (data) {
+        chrome.storage.local.get("scripts", function (data) {
             var scripts = data.scripts || [];
             scripts = scripts.filter(function (script) {
                 return script.id != id;
@@ -57,11 +57,11 @@ var common = {
 function getUrlParams(key) {
     var params = [];
     var search = location.search;
-    if (search.indexOf('?') === 0) {
+    if (search.indexOf("?") === 0) {
         search = search.substr(1);
     }
-    search.split('&').forEach(function (item) {
-        var data = item.split('=');
+    search.split("&").forEach(function (item) {
+        var data = item.split("=");
         params[data[0]] = unescape(data[1]);
     });
     if (key) {

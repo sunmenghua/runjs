@@ -10,25 +10,19 @@ function getScripts (url, callback) {
     });
 }
 
+function executeScript(tabId, code, callback) {
+    chrome.tabs.executeScript(tabId, {code: code}, callback);
+}
+
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
-    if (request.action === 'test') {
+    if (request.action === 'run') {
         getScripts(sender.tab.url, function (scripts) {
             scripts.forEach(function (script) {
                 executeScript(sender.tab.id, script.code, function () {
-                    console.log('tab[' + sender.tab.id + '] run script[' + script.id + ']');
-                    console.log(script.pattern);
-                    console.log(script.code);
+                    console.log('tab[' + sender.tab.id + '] ran script[' + script.id + ']');
                 });
             });
             sendResponse('RunJS ran!');
         });
     }
 });
-
-function getScript(url) {
-    return '$("#s_upfunc_menus").hide();';
-}
-
-function executeScript(tabId, code, callback) {
-    chrome.tabs.executeScript(tabId, {code: code}, callback);
-}
