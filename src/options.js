@@ -1,6 +1,7 @@
 function renderScripts(scripts) {
     var html = "";
     scripts.forEach(function (script) {
+        console.log(script);
         html += '<div class="form-horizontal script">'
              +      '<input type="hidden" name="id" value="' + script.id + '">'
              +      '<div class="form-group">'
@@ -8,14 +9,14 @@ function renderScripts(scripts) {
              +          '<div class="col-md-10">'
              +              '<p class="form-control-static">'
              +                  script.pattern
-             +                  '<a class="btn btn-link pull-right" href="edit.html?id=' + script.id + '">编辑</a>'
-             +                  '<button class="btn btn-link pull-right script-del">删除</button>'
+             +                  '<a class="btn btn-link pull-right" href="edit.html?id=' + script.id + '">Edit</a>'
+             +                  '<button class="btn btn-link pull-right script-del">Delete</button>'
              +              '</p>'
              +          '</div>'
              +      '</div>'
              +      '<div class="form-group">'
              +          '<div class="col-md-offset-1 col-md-10">'
-             +              '<pre>' + script.code + '</pre>'
+             +              '<pre>' + $('<div />').text(script.code).html() + '</pre>'
              +          '</div>'
              +      '</div>'
              +      '<div class="form-group">'
@@ -39,7 +40,7 @@ $(document).ready(function () {
     });
 
     $(".scripts").on("click", ".script-del", function () {
-        if ( ! confirm("确定删除该脚本？")) {
+        if ( ! confirm("Confirm delete this script?")) {
             return;
         }
 

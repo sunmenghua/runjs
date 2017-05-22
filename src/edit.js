@@ -25,7 +25,7 @@ $(document).ready(function () {
         var script = getScript();
 
         if (script.pattern.trim().length == 0) {
-            alert('请输入匹配模式');
+            alert('URL Pattern can not empty!');
             return;
         }
 

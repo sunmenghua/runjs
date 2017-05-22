@@ -7,7 +7,7 @@ function renderScripts(scripts) {
              +          '<input type="checkbox" checked disabled>'
              +          '<a href="edit.html?id=' + script.id + '" target="_bank">' + script.pattern + '</a>'
              +      '</label>'
-             +      '<pre class="pre-scrollable">' + script.code + '</pre>'
+             +      '<pre class="pre-scrollable">' + $('<div />').text(script.code).html() + '</pre>'
              +  '</div>';
     });
 

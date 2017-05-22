@@ -33,11 +33,6 @@ footer {
 
 .script .btn-link {
     padding: 3px 6px;
-    visibility: hidden;
-}
-
-.script:hover .btn-link {
-    visibility: visible;
 }
 
 header {
